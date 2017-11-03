@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+      <link href="css/styles.css" rel="stylesheet" type="text/css">
+      <link href='https://fonts.googleapis.com/css?family=Vesper Libre' rel='stylesheet'>
+      <script src="js/jquery-3.2.1.js"></script>
+        <script src="js/scripts.js"></script>
+      <title>PING PONG GAME</title>
+    </head>
+    <body>
+      <div  id="wrap">
+  <div id="header"><h1>PING PONG GAME</h1></div>
+  <div id="nav">
+  <ul>
+  <li><a href="index.html">HOME</a></li>
+  <li><a href="#">ABOUT US</a></li>
+  </ul>
+  </div>
+  <div id="main">
+  <h2>About Ping Pong</h2>
+  <h3>Created By:</h3>
+  <p>Collins Juma </p>
+  <h3>GitHub Username/URL::</h3>
+  <p><a href="https://github.com/collinsjumaz">collinsjumaz</a></p>
+  <h3>Level 2 Test for:</h3>
+  <p>JavaScript</p>
+  <div class="contact-fp-wrap">
+  <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+   <linearGradient id="logo-gradient" x1="50%" y1="0%" x2="75%" y2="100%" >
+
+            <stop offset="0%" stop-color="#F79533">
+                <animate attributeName="stop-color" values="#F79533; #F37055; #EF4E7B; #A166AB; #5073B8; #1098AD; #07B39B; #6DBA82; #F79533" dur="4s" repeatCount="indefinite"></animate>
+            </stop>
+
+            <stop offset="100%" stop-color="#F79533">
+                <animate attributeName="stop-color" values="#F37055; #EF4E7B; #A166AB; #5073B8; #1098AD; #07B39B; #6DBA82; #F79533; #F37055" dur="4s" repeatCount="indefinite"></animate>
+            </stop>
+
+        </linearGradient>
+  </defs>
+    <rect class="booton" height="60" width="320" />
+  </svg>m,./
+   <div class="booton-text">Web-page Built in JavaScript</div>
+  </div>
+
+  </div>
+  <div id="sidebar">
+    <div class="game">
+      <h2>Let's play!</h2>
+      <h4>Rules:</h4>
+      <p>Ping Pong with count up to your number from 1 with the following exceptions:</p>
+      <ol>
+        <li>Numbers divisible by 3 become "ping"</li>
+        <li>Numbers divisible by 5 become "pong"</li>
+        <li>Numbers divisible by 3 and 5 become "pingpong"</li>
+      </ol>
+      <form id="pingpongGame">
+        <label for="userNumber">Enter your number here:</label>
+        <input type="number" step="any" id="userNumber">
+        <button type="submit">Ping Pong!</button>
+      </form>
+      <ul id="result">
+      </ul>
+    </div>
+  </div>
+
+  <div id="footer">
+  <p> Designed by Collins Juma <br> copyright 2017</p> </div>
+  </div>
+
+    </body>
+  </html>
