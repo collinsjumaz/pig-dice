@@ -1,15 +1,18 @@
-# Ping-Pong Project
+# Pig Dice Project
 
-## Ping_Pong Indipendent Project 3, 30/10/2017
+## Pig Dice  Indipendent Project 4, 03/11/2017
 
 #### By Collins Juma
 
-## Description
+## Description 
+GAME RULES:
 
-Ping-pong Project . This application takes a number from a user and returns a range of numbers from 1 to the chosen number with the following exceptions:
-* Numbers divisible by 3 are replaced with "ping"
-* Numbers divisible by 5 are replaced with "pong"
-* Numbers divisible by 15 are replaced with "pingpong"
+- The game has 2 players, playing in rounds
+- In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score
+- BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn
+- The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn
+- The first player to reach 100 points on GLOBAL score wins the game
+
 
 ## Setup
 

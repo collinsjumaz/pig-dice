@@ -24,25 +24,7 @@
       <p><a href="https://github.com/collinsjumaz">collinsjumaz</a></p>
       <h3>Level 2 Test for:</h3>
       <p>JavaScript</p>
-    <div class="contact-fp-wrap">
-  <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-   <linearGradient id="logo-gradient" x1="50%" y1="0%" x2="75%" y2="100%" >
-
-            <stop offset="0%" stop-color="#F79533">
-                <animate attributeName="stop-color" values="#F79533; #F37055; #EF4E7B; #A166AB; #5073B8; #1098AD; #07B39B; #6DBA82; #F79533" dur="4s" repeatCount="indefinite"></animate>
-            </stop>
-
-            <stop offset="100%" stop-color="#F79533">
-                <animate attributeName="stop-color" values="#F37055; #EF4E7B; #A166AB; #5073B8; #1098AD; #07B39B; #6DBA82; #F79533; #F37055" dur="4s" repeatCount="indefinite"></animate>
-            </stop>
-
-        </linearGradient>
-  </defs>
-    <rect class="booton" height="60" width="320" />
-  </svg>m,./
-   <div class="booton-text">Web-page Built in JavaScript</div>
-  </div>
+   
 
   </div>
   <div id="sidebar">
@@ -52,14 +34,54 @@
       <p>Ping Pong with count up to your number from 1 with the following exceptions:</p>
       <ol>
         <li>Numbers divisible by 3 become "ping"</li>
-        <li>Numbers divisible by 5 become "pong"</li>
-        <li>Numbers divisible by 3 and 5 become "pingpong"</li>
       </ol>
-      <form id="pingpongGame">
-        <label for="userNumber">Enter your number here:</label>
-        <input type="number" step="any" id="userNumber">
-        <button type="submit">Ping Pong!</button>
-      </form>
+        <h1>Let's play Pig Dice!</h1>
+          <form id="player-1">
+            <div class="form-group">
+              <label for="player1Name">Player 1 Name:</label>
+              <input required class="player1Name form-control" type="text">
+            </div>
+          <div class="start-menu container">
+      <div class="jumbotron">
+        <h1>Let's play Pig Dice!</h1>
+          <form id="player-1">
+            <div class="form-group">
+              <label for="player1Name">Player 1 Name:</label>
+              <input required class="player1Name form-control" type="text">
+            </div>
+          </form>
+          <form id="player-2">
+            <div class="form-group">
+              <label for="player2Name">Player 2 Name:</label>
+              <input required class="player2Name form-control" type="text">
+            </div>
+          </form>
+          <button id="start" class="btn-info btn">Start</button>
+      </div>
+    </div>
+
+    <div class="player-console container">
+        <button id="new-game" class="btn-success btn">NEW GAME</button>
+        <div class = "row">
+          <div class="col-md-6">
+            <h2>Player 1: <span id = "player1Name"><span></h2>
+              <button id="player1-roll" class="btn-success btn">Roll</button>
+              <button id="player1-hold" class="btn-success btn">Hold</button>
+            <h2>Dice Roll: <span id="die-roll-1"></span></h2>
+            <p>Round Total: <span id="round-total-1"></span></p>
+            <p>Total Score: <span id="total-score-1"></span></p>
+          </div>
+
+        <div class="col-md-6">
+          <h2>Player 2: <span id = "player2Name"><span></h2>
+            <button id="player2-roll" class="btn-success btn">Roll</button>
+            <button id="player2-hold" class="btn-success btn">Hold</button>
+            <h2>Dice Roll: <span id="die-roll-2"></span></h2>
+            <p>Round Total: <span id="round-total-2"></span></p>
+            <p>Total Score: <span id="total-score-2"></span></p>
+        </div>
+        </div>
+      </div>
       <ul id="result">
       </ul>
     </div>
