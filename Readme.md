@@ -1,6 +1,6 @@
 # Pig Dice Project
 
-## Pig Dice  Indipendent Project 4, 03/11/2017
+## Pig Dice  Independent Project 4, 03/11/2017
 
 #### By Collins Juma
 
