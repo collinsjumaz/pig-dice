@@ -47,6 +47,7 @@
 #game-play button {
   width: 100px;
   margin-bottom: 15px;
+  align-items: center;
 }
 #game-play .btn[disabled] {
   opacity: .25;
