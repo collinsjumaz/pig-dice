@@ -72,7 +72,6 @@ Game.prototype.checkForWinner = function() {
 }
 Game.prototype.nextPlayer = function() {
   var oldPlayerIndex = this.activePlayerIndex;
-  // loops to front of player array if last player in array just finished thier turn
   if (this.activePlayerIndex === this.playerArray.length-1) {
     this.activePlayerIndex = 0;
     this.playerArray[oldPlayerIndex].isTurn = false;
@@ -88,8 +87,6 @@ Game.prototype.roll = function() {
   var activePlayer = this.playerArray[this.activePlayerIndex];
   activePlayer.dice.roll();
   activePlayer.reactToDiceValue();
-
-  // update display of scores
   var jQueryPointer = '#' + activePlayer.playerID;
   $(jQueryPointer + " p.roll-score").text("Current Roll: " + activePlayer.dice.diceValue);
   $(jQueryPointer + " p.turn-score").text("Score This Turn: " + activePlayer.turnScore);
@@ -139,14 +136,9 @@ Game.prototype.initializeGame = function() {
   nextField("#start", "#game-play");
   this.toggleActiveButtons();
 }
-
-
-// ======================
 //  User Interface Logic
-// ======================
 
 var resetGame = function() {
-  // clear the form fields
   $('#player1name').val('');
   $('#player2name').val('');
   $('#score-to-win').val(100);
@@ -164,25 +156,20 @@ var nextField = function(divHide, divShow) {
 $(document).ready(function() {
   var currentGame = new Game();
   $('#player1name').focus();
-
-  // event handler for game submit
   $('#game-initializer').submit(function(event) {
     event.preventDefault();
     $('p.total-score').text("Total Score: ");
-    // initialize game content
     currentGame.initializeGame();
   });
-
-  // event handler for the roll button
   $('button.roll').click(function() {
     currentGame.roll();
   });
 
   $('button.end-turn').click(function() {
-    // $('p.total-score').text("Total Score: ");
+
     currentGame.endTurn();
   });
-  // event handler for the reset button
+
   $('#reset-game').click(function() {
     $('p.total-score').text("Total Score: ");
     currentGame = new Game();
