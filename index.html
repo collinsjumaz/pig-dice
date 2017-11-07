@@ -21,13 +21,11 @@
           <li>If two ones are rolled, the player loses their total score and is forced to end their turn.</li>
           <li>The first player to reach 100 (or value of your choice) is the winner.</li>
         </ul>
-        <div class="button-div"><button class="btn" id="reset-game">New Game</button></div>
       </div>
-      <div id="game-result">
-        <h2>The Winner is... <span></span></h2>
-      </div>
-      <div id="start" class="row">
-        <form id="game-initializer">
+
+
+<div class="container">
+  <form id="game-initializer">
           <div class="col-xs-6">
             <label for="player1">Player One Name</label>
             <input type="text" id="player1name"><br>
@@ -36,50 +34,49 @@
             <label for="score-to-win">Score to Win</label>
             <input type="number" id="score-to-win" value="100">
           </div>
-          <div class="col-xs-6">
-            <button class="btn" type="submit" id="start-game">Start Game</button>
           </div>
         </form>
-      </div>
-      <div id="game-play">
-        <div class="row">
-          <div id="player1" class="col-sm-6">
-            <h3></h3>
-            <div class="row die-pics">
-              <div class="col-xs-6">
-                <img class='die-pic1' src='img/dice5.png' >
-              </div>
-              <div class="col-xs-6">
-                <img class='die-pic2' src='img/dice4.png'>
-              </div>
-            </div>
-            <p class="roll-score">Current Role: </p>
-            <p class="turn-score">Score This Turn: </p>
-            <p class="total-score">Total Score: 0</p>
-            <button class="btn roll">Roll</button><br>
-            <button class="btn end-turn">End Turn</button>
-          </div>
+</div>
 
-          <div id="player2" class="col-sm-6">
-            <h3></h3>
-            <div class="row die-pics">
-              <div class="col-xs-6">
-                <img class="die-pic1" src='img/dice2.png'>
-              </div>
-              <div class="col-xs-6">
-                <img class="die-pic2" src='img/di6.png'>
-              </div>
-            </div>
-            <p class="roll-score">Current Role: </p>
-            <p class="turn-score">Score This Turn: </p>
-            <p class="total-score">Total Score: 0</p>
-            <button class="roll btn">Roll</button><br>
-            <button class="end-turn btn">End Turn</button>
+  <div class="container">
+
+
+    <div class="row">
+      <div class="col-md-4">
+
+        <div id="player1Box" class="well">
+          <h3 id="player1Name"></h3>
+          <h3>Player One Total: <span id="player1Total"></span></h3>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+
+        <div id="scoreBox" class="well">
+          <h3>Turn Total: <span id="turnTotal"></span></h3>
+        </div>
+
+        <div id="diceResult" class="well">
+          <h3 class="text-center">You rolled</h3>
+          <div id="dieRoll">
           </div>
+        </div>
+        <button id="roll" class="btn">Roll</button>
+        <button id="hold" class="btn">Hold</button>
+        <button id="reset" class="btn">New Game</button>
+      </div>
+
+      <div class="col-md-3">
+        <div id="player2Box" class="well">
+          <h3 id="player2Name"></h3>
+          <h3>Player Two Total: <span id="player2Total"></span></h3>
         </div>
       </div>
     </div>
+  </div>  
+    </div>
+    </body>
     <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
-  </body>
+  
 </html>
