@@ -1,111 +1,62 @@
-var Player = {
-  setNumber: function(number) {
-    this.number = number;
-  },
-  addPoints: function(points) {
-    this.score += points;
-  },
-  score: 0
-};
 
-var Turn = {
-  points: 0,
-  setPlayer: function(player) {
-    this.player = player;
-  },
-  roll: function() {
-    var die = Object.create(Die);
-    var roll = die.roll();
-    if (roll === 1) {
-      this.over = true;
-      this.points = 0;
-    } else {
-      this.points += roll;
-    }
-    return roll;
-  },
-  hold: function() {
-    this.player.addPoints(this.points);
-    this.over = true;
-  }
-};
+var Player = {};
 
-var Die = {
-  roll: function() {
-    return Math.floor(Math.random() * 5 + 1);
-  }
-};
 
-var Game = {
-  createPlayers: function(numberOfPlayers) {
-    this.players = [];
-    for (var i = numberOfPlayers; i > 0; i--) {
-      var player = Object.create(Player);
-      player.setNumber(i);
-      this.players.push(player);
-      this.nextPlayer();
-    }
-  },
-  nextPlayer: function() {
-    this.currentPlayer = this.players.pop();
-    this.players.unshift(this.currentPlayer);
-    return this.currentPlayer;
-  },
-  over: function() {
-    return this.players.some(function(player) {
-      return player.score >= 100;
-    });
-  },
-  winner: function() {
-    return this.players.reduce(function(highestScorerYet, currentPlayer) {
-      if (highestScorerYet.score > currentPlayer.score) {
-        return highestScorerYet;
-      } else {
-        return currentPlayer;
-      }
-    });
-  }
-};
+function pigdice(){
+  return Math.floor(Math.random() * 6) + 1;
+}
+
+
 
 $(function() {
-  function endTurn() {
-    $("#player" + currentPlayer.number + "-score").empty().append(currentPlayer.score);
-    currentPlayer = game.nextPlayer();
-  }
 
-  function newTurn() {
-    $("#turn").hide();
-    $("#current-player").empty().append(currentPlayer.number);
-    var currentTurn = Object.create(Turn);
-    currentTurn.setPlayer(currentPlayer);
-    return currentTurn;
-  }
 
-  var game = Object.create(Game);
-  game.createPlayers(2);
-  var currentPlayer = game.currentPlayer;
-  var currentTurn = newTurn();
-  
-  $("button#roll").click(function() {
-    var currentRoll = currentTurn.roll();
-    $("#current-roll").empty().append(currentRoll);
-    $("#current-turn-score").empty().append(currentTurn.points);
-    $("#turn").show();
-    if (currentTurn.over) {
-      alert("You rolled a 1. Your turn is over!")
-      endTurn();
-      currentTurn = newTurn();
-    }
+  $("form").submit(function(event) {
+    event.preventDefault();
+    var player_1 = $(".player1Name").val();
+    var player_2 = $(".player2Name").val();
+    $(".gaming").show();
+    $("#footer").show();
+    $("#player1Name").text(player_1);
+    $("#player2Name").text(player_2);
   });
 
-  $("button#hold").click(function() {
-    currentTurn.hold();
-    endTurn();
-    alert("You scored " + currentTurn.points + " points this turn.");
-    if (game.over()) {
-      alert("Player " + game.winner().number + " wins!")
-    } else {
-      currentTurn = newTurn();
-    }
+
+  $("button#new-game").click(function(event) {
+    event.preventDefault();
+    $(".gaming").hide();
+    $(".player1Name").val("");
+    $(".player2Name").val("");
   });
+
+  $("button#player1-toss").click(function(event) {
+    event.preventDefault();
+    var score1 = pigdice();
+    $("#total-score-1").html(score1);
+
+    $("#round-total-1").html("The total is " + score1);
+
+    });
+
+  $("button#player2-toss").click(function(event) {
+    event.preventDefault();
+    var score2 = pigdice();
+    $("#total-score-2").html(score2);
+
+    $("#round-total-2").html("The total is " + score2);
+  });
+
+  $("#lev1").click(function(event) {
+    $("body").css("background-color", "#b1fbe1")
+  });
+
+  $("#lev2").click(function(event) {
+    $("body").css("background-color", "#b1fbe1")
+  });
+
+  $("#lev3").click(function(event) {
+    $("body").css("background-color", "#b1fbe1")
+  });
+
+
 });
